@@ -488,57 +488,57 @@ https://templatemo.com/tm-516-known
   .caption h3 a:hover { color: #FF3; }
 
   .home-slider .item-first {
-    background-image: url(/src/assets/images/slider-image1.png);
+    background-image: url(../images/slider-image1.png);
 	background-position: center;
   }
 
   .home-slider .item-second {
-    background-image: url(/src/assets/images/slider-image2.jpg);
+    background-image: url(../images/slider-image2.jpg);
   }
 
   .home-slider .item-third {
-    background-image: url(/src/assets/images/slider-image3.png);
+    background-image: url(../images/slider-image3.png);
   }
   .home-slider .item-rvehiculo {
-    background-image: url(/src/assets/images/RegistroVehiculo.jpg);
+    background-image: url(../images/RegistroVehiculo.jpg);
   background-position: center;
   }
   .home-slider .item-indexvehiculos {
-    background-image: url(/src/assets/images/IndexVehiculos.jpg);
+    background-image: url(../images/IndexVehiculos.jpg);
   background-position: center;
   }
 
   .home-slider .item-indexempleados {
-    background-image: url(/src/assets/images/IndexEmpleados.jpg);
+    background-image: url(../images/IndexEmpleados.jpg);
   background-position: center;
   }
 
   .home-slider .item-modificarempleado {
-    background-image: url(/src/assets/images/ModificarEmpleado.jpg);
+    background-image: url(../images/ModificarEmpleado.jpg);
   background-position: center;
   }
 
   .home-slider .item-indexclientes {
-    background-image: url(/src/assets/images/IndexClientes.jpg);
+    background-image: url(../images/IndexClientes.jpg);
   background-position: center;
   }
    .home-slider .item-rcliente {
-    background-image: url(/src/assets/images/RegistroCliente.jpg);
+    background-image: url(../images/RegistroCliente.jpg);
   background-position: center;
   }
 
   .home-slider .item-modificarcliente {
-    background-image: url(/src/assets/images/ModificarCliente.jpg);
+    background-image: url(../images/ModificarCliente.jpg);
   background-position: center;
   }
 
 .home-slider .item-indexcitas {
-    background-image: url(/src/assets/images/IndexCitas.jpg);
+    background-image: url(../images/IndexCitas.jpg);
   background-position: center;
   }
 
   .home-slider .item-estadocitas {
-    background-image: url(/src/assets/images/EstadoCita.jpg);
+    background-image: url(../images/EstadoCita.jpg);
   background-position: center;
   }
 
