@@ -8,12 +8,13 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
+import { ClienteComponent } from './cliente/cliente.component';
 //Servicios
 import {IniciosesionService} from './servicios/iniciosesion.service';
 import {ClienteService} from './servicios/cliente.service';
 import {EmpleadoService} from './servicios/empleado.service'
-import { EmpleadoComponent } from './empleado/empleado.component';
-import { ClienteComponent } from './cliente/cliente.component';
+
 
 
 @NgModule({
@@ -21,15 +22,11 @@ import { ClienteComponent } from './cliente/cliente.component';
     AppComponent,
     MenuComponent,
     FooterComponent,
-<<<<<<< HEAD
     InicioComponent,
     LoginComponent,
     EmpleadoComponent,
     ClienteComponent
-=======
-    InicioComponent
     
->>>>>>> 8726b8940a9ebbddcc7491d6fe0d681b1c900b2d
   ],
   imports: [
     BrowserModule,
