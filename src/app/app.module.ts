@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
 //Componentes
 import { AppComponent } from './app.component';
@@ -21,14 +21,20 @@ import { ClienteComponent } from './cliente/cliente.component';
     AppComponent,
     MenuComponent,
     FooterComponent,
+<<<<<<< HEAD
     InicioComponent,
     LoginComponent,
     EmpleadoComponent,
     ClienteComponent
+=======
+    InicioComponent
+    
+>>>>>>> 8726b8940a9ebbddcc7491d6fe0d681b1c900b2d
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OwlModule
   ],
   providers: [//Servicios 
     IniciosesionService,
