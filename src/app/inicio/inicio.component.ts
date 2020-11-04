@@ -10,17 +10,18 @@ import {Router} from '@angular/router';
 export class InicioComponent implements OnInit {
 
   usuario={
-    usuario:"",
-    pass:""
+    Usuario:"",
+    Contrasena:""
   }
 
   constructor(private iniciosesion:IniciosesionService, private router:Router) { }
+  //Elementos de owl-carousel
   title = 'owlcarouselinAngular';  
   Images = ['../assets/images/Carousel1.jpeg', '../assets/images/Carousel2.jpeg', '../assets/images/Carousel3.jpeg'];  
-  
+
   SlideOptions = { items: 1, dots: true, nav: true };  
   CarouselOptions = { items: 3, dots: true, nav: true };  
-  
+  //Fin de elementos owl-carousel
 
   ngOnInit(): void {
   }
@@ -32,13 +33,13 @@ export class InicioComponent implements OnInit {
 
         const datos = res.envio.split(",")
         localStorage.setItem('token',datos[0])
-        localStorage.setItem('nombre',datos[1])
-        localStorage.setItem('tipo',datos[2])
+        localStorage.setItem('Usuario',datos[1])
+        localStorage.setItem('Tipo',datos[2])
         alert("Bienvenid@"+ datos[1])
 
         this.iniciosesion.eslogueado();
         this.iniciosesion.tipousu();
-        this.router.navigate(['/catalogo'])
+        this.router.navigate(['/citas'])
       },
       err =>{
         console.log(err)

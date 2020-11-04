@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 //Componentes
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -31,7 +33,9 @@ import {EmpleadoService} from './servicios/empleado.service'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OwlModule
+    OwlModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [//Servicios 
     IniciosesionService,
