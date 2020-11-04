@@ -6,7 +6,19 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
+<<<<<<< Updated upstream
     AppComponent
+=======
+    AppComponent,
+    MenuComponent,
+    FooterComponent,
+    InicioComponent,
+    LoginComponent,
+    EmpleadoComponent,
+    ClienteComponent
+    
+    
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
