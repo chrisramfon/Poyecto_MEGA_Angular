@@ -1,4 +1,110 @@
-<p>cliente works!</p>
+
+     <!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [items]="Images" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-indexclientes">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1>Clientes</h1>
+                                        <h3>Aqui encontrarás la información de los clientes registrados</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
+
+
+     <!-- MENU -->
+     
+
+
+    <div id="principal">
+        <div id="titulo" class="section-tittle" align="center" style="margin-top: 70px;">
+            <h2>&nbsp</h2>
+        </div>
+        <div id="media">
+            <div id="formu" align="center" style="margin-bottom: 70px">
+                <br>
+                <br>
+                <form id="registroCliente" class="entry-form" method="post">
+                    
+                    <input type="text" name="codigo" placeholder="CÓDIGO" class="form-control" id="codigo">
+
+                    <input type="text" name="nombre" placeholder="NOMBRE" class="form-control" id="nombre">
+                    
+                    <input type="text" name="apellido1" placeholder="PATERNO" class="form-control" id="apellido1">
+                    
+                    <input type="text" name="apellido2" placeholder="MATERNO" class="form-control" id="apellido2">
+                    
+                    <input type="text" name="direccion" placeholder="DIRECCIÓN" class="form-control" id="direccion">
+                    
+                    <input type="text" name="telefono" placeholder="TELÉFONO" class="form-control" id="telefono">
+                    
+                    <input type="text" name="usuario" placeholder="USUARIO" class="form-control" id="usuario">
+                    
+                    <input type="password" name="contrasenia" placeholder="CONTRASEÑA" class="form-control" id="contrasenia">
+                    
+                  <!--  <input type="button" name="enviar" name="enviar" value="REGISTRAR" class="section-btn" id="enviar">-->
+
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-primary btn-negro texto-gris">
+                      <input type="radio" name="options" id="option1" checked> Active
+                    </label>
+                    <label class="btn btn-warning">
+                      <input type="radio" name="options" id="option2"> Radio
+                    </label>
+                    <label class="btn btn-warning">
+                      <input type="radio" name="options" id="option3"> Radio
+                    </label>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="principal">
+        <div id="tabla-principal" >
+            <div id="tabla-contenedor" >
+                <div id="tabla-tabla" >
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td><h4>Código</h4></td>
+                                    <td><h4>Nombre</h4></td>
+                                    <td><h4>Apellido paterno</h4></td>
+                                    <td><h4>Apellido materno</h4></td>
+                                    <td><h4>Telefono</h4></td>
+                                    <td><h4>Estado</h4></td>
+                                </tr> 
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--<p>cliente works!</p>
 
 Código:<input type="text" > <br>
 Nombre:<input type="text" > <br>
@@ -31,13 +137,13 @@ Tipo:<input type="text" > <br>
         <td>Tipo</td>
     </tr>
 
-    <!--<tr *ngFor="let clien of clientes | async">
+    <tr *ngFor="let clien of clientes | async">
         <td>{{clien.IDcli}}</td>
         <td>{{usua.Nombre}}</td>
         <td>{{usua.Apellido1}}</td>
         <td>{{usua.Apellido2}}</td>
         <td>{{usua.Direccion}}</td>
-    </tr>-->
+    </tr>
 
     
-</table>
+</table>-->
