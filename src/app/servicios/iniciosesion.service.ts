@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IniciosesionService {
 
-  private url_login="http://localhost:3000/usuarios/iniciosesion"
+  private url_login="http://localhost:3000/usuario/inicio"
 
 @Output() change: EventEmitter<boolean> = new EventEmitter();
 @Output() change1: EventEmitter<String> = new EventEmitter();
@@ -15,6 +15,7 @@ export class IniciosesionService {
 
   login(usuario){
     return this.http.post<any>(this.url_login,usuario);
+    //alert(usuario.Usuario+" "+usuario.Contrasena)
   }
 
   eslogueado(){
@@ -23,7 +24,7 @@ export class IniciosesionService {
   }
 
   tipousu(){
-    this.change1.emit(localStorage.getItem('tipo'))
-    return localStorage.getItem('tipo')
+    this.change1.emit(localStorage.getItem('Tipo'))
+    return localStorage.getItem('Tipo')
   }
 }

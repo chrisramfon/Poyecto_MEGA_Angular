@@ -13,7 +13,6 @@ import { GuardiaTipousuGuard} from './guardia-tipousu.guard';
 
 const routes: Routes = [
   {path:'inicio', component:InicioComponent},
-  {path:'iniciosesion', component:InicioComponent},
   {path:'cliente', component:ClienteComponent, canActivate:[GuardiaLoginGuard,GuardiaTipousuGuard]},
   {path:'empleado', component:EmpleadoComponent, canActivate:[GuardiaLoginGuard,GuardiaTipousuGuard]},
   //Rutas por defecto, dejar al final

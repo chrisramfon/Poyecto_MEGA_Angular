@@ -114,11 +114,11 @@ Servicio: Cumplir con las tareas que se establecieron.</p>
                             
                              <h2>Inicia sesión</h2>
 
-                             <input id="usuario" type="usuario" name="usuario" class="form-control" placeholder="USUARIO">
+                             <input type="text" class="form-control" name="Usuario" [(ngModel)]="usuario.Usuario" placeholder="USUARIO">
 
-                             <input id="contrasenia" type="password" name="contrasenia" class="form-control" placeholder="CONTRASEÑA">
+                             <input type="password" class="form-control" name="Contrasena" [(ngModel)]="usuario.Contrasena" placeholder="CONTRASEÑA">
 
-                             <button class="submit-btn form-control" id="form-submit">Iniciar Sesión</button>
+                             <button class="submit-btn form-control" id="form-submit" (click)="login()">Iniciar Sesión</button>
                         </form>
                    </div>
               </div>
