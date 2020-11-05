@@ -12,9 +12,9 @@ import { GuardiaLoginGuard } from './guardia-login.guard';
 import { GuardiaTipousuGuard} from './guardia-tipousu.guard';
 
 const routes: Routes = [
-  {path:'inicio', component:InicioComponent},
+  {path:'inicio', component: InicioComponent},
   {path:'iniciosesion', component:InicioComponent},
-  {path:'cliente', component:ClienteComponent, canActivate:[GuardiaLoginGuard,GuardiaTipousuGuard]},
+  {path:'cliente', component:ClienteComponent},
   {path:'empleado', component:EmpleadoComponent, canActivate:[GuardiaLoginGuard,GuardiaTipousuGuard]},
   //Rutas por defecto, dejar al final
   {path:'',redirectTo:'inicio', pathMatch:'full'},
