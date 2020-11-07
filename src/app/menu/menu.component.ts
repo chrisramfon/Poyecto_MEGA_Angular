@@ -11,22 +11,24 @@ export class MenuComponent implements OnInit {
 @HostBinding('class.is-open')
 
 entro=false;
-tipo=""
+Tipo="E"
   constructor(private iniciosesion:IniciosesionService) { }
 
   ngOnInit(): void {
     this.iniciosesion.change.subscribe(isOpen =>{
       this.entro=isOpen;
     })
-
+    this.iniciosesion.change1.subscribe(isOpen =>{
+      this.Tipo=isOpen;
+    })
     this.entro=this.iniciosesion.eslogueado();
-    this.tipo=this.iniciosesion.tipousu();
+    this.Tipo=this.iniciosesion.tipousu();
   }
 
   cerrarsesion(){
     localStorage.removeItem('token');
-    localStorage.removeItem('Nombre');
-    localStorage.removeItem('tipo');
+    localStorage.removeItem('Usuario');
+    localStorage.removeItem('Tipo');
     this.entro = this.iniciosesion.eslogueado();
   }
 

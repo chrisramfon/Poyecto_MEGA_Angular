@@ -19,7 +19,7 @@ export class GuardiaLoginGuard implements CanActivate {
     if(this.iniciosesion.eslogueado()){
       return true
     }else{
-      this.router.navigate(['/iniciosesion'])
+      this.router.navigate(['/inicio'])
       return false
     }
   }

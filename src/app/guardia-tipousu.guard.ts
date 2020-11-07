@@ -18,7 +18,7 @@ export class GuardiaTipousuGuard implements CanActivate {
     if(this.iniciosesion.tipousu()=="E"){
       return true
     }else{
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/clientes'])
     return false
     }
   }
