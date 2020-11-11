@@ -7,78 +7,75 @@ import { ClienteService } from '../servicios/cliente.service';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
-clientes;
-cliente={
-  IDcli:"",
-  Nombre:"",
-  Apellido1:"",
-  Apellido2:"",
-  Direccion:"",
-  Telefono:"",
-  Estado:"",
-  Usu:"",
-  Pass:"",
-  Tipo:""
-}
+  tabla;
+  clientes;
+  cliente = {id: "", Nombre: "", Apellido1: "", Apellido2: "", Direccion: "", Telefono: "", Estado: ""}
+
   constructor(private clienteServicio:ClienteService) { }
+
+
   //Elementos de owl-carousel
   title = 'owlcarouselinAngular';  
   Images = ['../assets/images/Carousel1.jpeg', '../assets/images/Carousel2.jpeg', '../assets/images/Carousel3.jpeg'];  
   SlideOptions = { items: 1, dots: true, nav: true };  
   CarouselOptions = { items: 3, dots: true, nav: true };  
   //Fin de elementos owl-carousel
+
+
   ngOnInit(): void {
   }
 
-  limpiarCli(){
-    this.cliente.IDcli=""
-    this.cliente.Nombre=""
-    this.cliente.Apellido1=""
-    this.cliente.Apellido2=""
-    this.cliente.Direccion=""
-    this.cliente.Telefono=""
-    this.cliente.Estado=""
-    this.cliente.Usu=""
-    this.cliente.Pass=""
-    this.cliente.Tipo=""
-  }
 
-  guardarCli(){
-    this.clienteServicio.guardarCli(this.cliente).subscribe(res =>{
-      //realizaremos un mensaje que nos indique que guardamos el usuario
-      alert("Usuario registrado")
-      this.limpiarCli()
-      this.consultartodoCli()
-    },
-    //esto es para si hay un error solo lo muestre en consola
-    err => console.log(err)
-    )
+  //Quitar los datos del formulario
+  limpiarFormulario(){
+    this.cliente.id = "";
+    this.cliente.Nombre = "";
+    this.cliente.Apellido1 = "";
+    this.cliente.Apellido2 = "";
+    this.cliente.Direccion = "";
+    this.cliente.Telefono = "";
+    this.cliente.Estado = "";
+  }
+  
 
-  }
-  modificarCli(){
-    this.clienteServicio.modificarCli(this.cliente).subscribe(res =>{
-      alert("Usuario modificado")
-      this.limpiarCli()
-      this.consultartodoCli()
-    },
-    err => console.log(err)
-    )
-  }
-  eliminarUsu(){
-    this.clienteServicio.eliminarCli(this.cliente).subscribe(res=>{
-      alert("Registro eliminado")
-      this.limpiarCli()
-      this.consultartodoCli()
-    }, err=> console.log(err))
-  }
-  buscarCli(){
-    this.clienteServicio.buscarCli(this.cliente).subscribe(res =>{
-      this.cliente = res
-    },
-    err => console.log(err)
-    )
-  }
-  consultartodoCli(){
-    this.clientes = this.clienteServicio.consultartodoCli()
-  }
+  //Metodo para guardar un cliente
+  guardarCliente(){
+    this.clienteServicio.guardarCliente(this.cliente).subscribe(res=>{
+      alert("Cliente registrado");
+      this.limpiarFormulario();
+    }, err=> console.log(err));
+  }//Fin de guardar cliente
+
+
+  //Modificación de cliente
+  modificarCliente(){
+    this.clienteServicio.modificarCliente(this.cliente).subscribe(res=>{
+      alert("Cliente modificado");
+      this.limpiarFormulario();
+    }, err=>{console.log(err)});
+  }//Fin de modificar cliente
+
+
+  //Buscar todos los clientes
+  buscarTodosClientes(){
+    this.clientes = this.clienteServicio.consultarTodosClientes();
+    this.tabla = true;
+  }//Fin de buscar todos los clientes
+
+
+  //Eliminar cliente
+  eliminarCliente(){
+    this.clienteServicio.eliminarCliente(this.cliente).subscribe(res=>{
+      alert("Cliente eliminado");
+      this.limpiarFormulario();
+    }, err=>console.log(err));
+  }//Fin de eliminar cliente
+
+
+  //Buscar un solo cliente
+  consultarCliente(){
+  this.clienteServicio.consultarCliente(this.cliente).subscribe(res=>{
+    this.cliente = res;
+  }, err=>console.log(err));
+  }//Fin de consultar cliente
 }
