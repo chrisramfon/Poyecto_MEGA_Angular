@@ -42,7 +42,7 @@
                     <input type="text" name="Apellido2" placeholder="MATERNO" class="form-control" id="Apellido2" [(ngModel)] = "cliente.Apellido2">
                     <input type="text" name="Direccion" placeholder="DIRECCIÓN" class="form-control" id="Direccion" [(ngModel)] = "cliente.Direccion">
                     <input type="text" name="Telefono" placeholder="TELÉFONO" class="form-control" id="Telefono" [(ngModel)] = "cliente.Telefono">
-                    <div class="custom-select">
+                    <div>
                         <select name="Estado" id="Estado" [(ngModel)] = "cliente.Estado">
                             <option value="Activo">Activo</option>
                             <option value="Inactivo">Inactivo</option>
@@ -50,30 +50,22 @@
                     </div>
                     <input type="text" name="usuario" placeholder="USUARIO" class="form-control" id="usuario">
                     <input type="password" name="contrasenia" placeholder="CONTRASEÑA" class="form-control" id="contrasenia">
-                    
-                  <!--  <input type="button" name="enviar" name="enviar" value="REGISTRAR" class="section-btn" id="enviar">-->
-
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-primary btn-negro texto-gris">
-                      <input type="radio" name="options" id="option1" checked> Active
-                    </label>
-                    <label class="btn btn-warning">
-                      <input type="radio" name="options" id="option2"> Radio
-                    </label>
-                    <label class="btn btn-warning">
-                      <input type="radio" name="options" id="option3"> Radio
-                    </label>
-                  </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options1" id="option1" checked (click)="guardarCliente()" value="Guardar">
+                        <input type="button" name="options2" id="option2" class="btn btn-warning" value="Eliminar" (click) = "consultarCliente()" value="Buscar">
+                        <input type="button" name="options3" id="option3" class="btn btn-warning" value="Modificar" (click) = "modificarCliente()">
+                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options3" id="option3" checked (click)="buscarTodosClientes()" value="Mostrar lista">
+                    </div>   
                 </form>
             </div>
         </div>
     </div>
 
-    <div id="principal">
+    <div id="principal" *ngIf="tabla">
         <div id="tabla-principal" >
             <div id="tabla-contenedor" >
                 <div id="tabla-tabla" >
-                    <div class="table-responsive">
+                    <div class="table-responsive" *ngIf="tabla">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -86,14 +78,15 @@
                                     <td><h4>Estado</h4></td>
                                 </tr> 
                             </thead>
-                            <tbody>
+                            <tbody *ngFor = "let cl of clientes | async">
                                 <tr>
-                                    <td>  </td>
-                                    <td>  </td>
-                                    <td>  </td>
-                                    <td>  </td>
-                                    <td>  </td>
-                                    <td>  </td>
+                                    <td> {{cl.id}} </td>
+                                    <td> {{cl.Nombre}} </td>
+                                    <td> {{cl.Apellido1}} </td>
+                                    <td> {{cl.Apellido2}} </td>
+                                    <td> {{cl.Direccion}} </td>
+                                    <td> {{cl.Telefono}} </td>
+                                    <td> {{cl.Estado}} </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -102,48 +95,3 @@
             </div>
         </div>
     </div>
-
-
-<!--<p>cliente works!</p>
-
-Código:<input type="text" > <br>
-Nombre:<input type="text" > <br>
-Apellido paterno:<input type="text" > <br>
-Apellido materno:<input type="text"> <br>
-Dirección:<input type="text" > <br>
-Teléfono:<input type="text" > <br>
-Estado:<input type="text" > <br>
-Usuario:<input type="text"> <br>
-Contraseña:<input type="password" > <br>
-Tipo:<input type="text" > <br>
-
-<input type="button" value="Buscar" >
-<input type="button" value="Guardar" >
-<input type="button" value="Eliminar" >
-<input type="button" value="Modificar">
-<input type="button" value="Cosultar todo">
-
-<table>
-    <tr>
-        <td>Código</td>
-        <td>Nombre</td>
-        <td>Apellido Materno</td>
-        <td>Apellido Parterno</td>
-        <td>Dirección</td>
-        <td>Teléfono</td>
-        <td>Estado</td>
-        <td>Usuario</td>
-        <td>Contraseña</td>
-        <td>Tipo</td>
-    </tr>
-
-    <tr *ngFor="let clien of clientes | async">
-        <td>{{clien.IDcli}}</td>
-        <td>{{usua.Nombre}}</td>
-        <td>{{usua.Apellido1}}</td>
-        <td>{{usua.Apellido2}}</td>
-        <td>{{usua.Direccion}}</td>
-    </tr>
-
-    
-</table>-->
