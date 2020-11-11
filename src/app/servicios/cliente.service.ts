@@ -6,22 +6,35 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ClienteService {
 
-  private urlCli="http://localhost:3000/cliente"
-  constructor(private http:HttpClient) { }
+  private url="http://localhost:3000/cliente"
+  constructor(private http: HttpClient) { }
 
-  guardarCli(cliente){
-    return this.http.post<any>(this.urlCli,cliente)
-  }
-  modificarCli(cliente){
-    return this.http.put<any>(this.urlCli,cliente)
-  }
-  eliminarCli(cliente){
-    return this.http.post(this.urlCli+"/borrar",cliente)
-  }
-  buscarCli(cliente){
-    return this.http.get<any>(this.urlCli+"/"+cliente.IDcli)
-  }
-  consultartodoCli(){
-    return this.http.get<any>(this.urlCli)
-  }
+ //Registro de cliente
+ guardarCliente(cliente){
+ return this.http.post<any>(this.url, cliente);
+ }
+
+
+ //Modificación de cliente
+ modificarCliente(cliente){
+   return this.http.put<any>(this.url, cliente);
+ }
+
+
+ //Consultar un solo cliente
+ consultarCliente(cliente){
+  return this.http.get<any>(this.url+"/"+cliente.id);
+ }
+
+
+ //Consultar todos los clientes
+ consultarTodosClientes(){
+   return this.http.get<any>(this.url);
+ }
+
+
+ //Eliminar cliente
+ eliminarCliente(cliente){
+  return this.http.post(this.url+"/eliminar", cliente);
+ }
 }
