@@ -1,21 +1,20 @@
 <p>empleado works!</p>
 
-Código:<input type="text"> <br>
-Nombre:<input type="text" > <br>
-Apellido paterno:<input type="text" > <br>
-Apellido materno:<input type="text" > <br>
-Dirección:<input type="text" > <br>
-Teléfono:<input type="text" > <br>
-Estado:<input type="text" > <br>
-Usuario:<input type="text" > <br>
-Contraseña:<input type="password" > <br>
-Tipo:<input type="text" > <br>
+Código:<input type="text" name="id" [(ngModel)]="empleado.id"> <br>
+Nombre:<input type="text" name="Nombre" [(ngModel)]="empleado.Nombre"> <br>
+Apellido paterno:<input type="text" name="Apellido1" [(ngModel)]="empleado.Apellido1"> <br>
+Apellido materno:<input type="text" name="Apellido2" [(ngModel)]="empleado.Apellido2"> <br>
+Dirección:<input type="text" name="Direccion" [(ngModel)]="empleado.Direccion"> <br>
+Teléfono:<input type="text" name="Telefono" [(ngModel)]="empleado.Telefono"> <br>
+Estado:<input type="text" name="Estado" [(ngModel)]="empleado.Estado"> <br>
+Usuario:<input type="text" name="Usuario" [(ngModel)]="usuario.Usuario"> <br>
+Contraseña:<input type="password" name="Contrasena" [(ngModel)]="usuario.Contrasena"> <br>
 
-<input type="button" value="Buscar" >
-<input type="button" value="Guardar" >
-<input type="button" value="Eliminar">
-<input type="button" value="Modificar" >
-<input type="button" value="Cosultar todo">
+<input type="button" value="Buscar" (click)="buscarEmp()">
+<input type="button" value="Guardar" (click)="guardarEmp();guardarUsu()">
+<input type="button" value="Eliminar" (click)="eliminarEmp()">
+<input type="button" value="Modificar" (click)="modificarEmp()">
+<input type="button" value="Cosultar todo" (click)="consultartodoEmp()">
 
 <table>
     <tr>
@@ -23,21 +22,29 @@ Tipo:<input type="text" > <br>
         <td>Nombre</td>
         <td>Apellido Materno</td>
         <td>Apellido Parterno</td>
-        <td>Dirección</td>
-        <td>Teléfono</td>
-        <td>Estado</td>
-        <td>Usuario</td>
-        <td>Contraseña</td>
-        <td>Tipo</td>
+        <td>Dirección</td> 
+        <td>Teléfono</td> 
+        <td>Estado</td> 
+        <td>Usuario</td> 
+        <td>Contraseña</td> 
+        <td>Tipo</td> 
+    
     </tr>
 
-    <!--<tr *ngFor="let emp of empleados | async">
-        <td>{{emp.IDem}}</td>
+    <tr *ngFor="let emp of empleados | async">
+        <td>{{emp.id}}</td>
         <td>{{emp.Nombre}}</td>
         <td>{{emp.Apellido1}}</td>
         <td>{{emp.Apellido2}}</td>
         <td>{{emp.Direccion}}</td>
-    </tr>-->
+        <td>{{emp.Telefono}}</td>
+        <td>{{emp.Estado}}</td>
+    </tr>
+    <tr *ngFor="let usu of usuarios | async">
+        <td>{{usu.Usuario}}</td>
+        <td>{{usu.Contrasena}}</td>
+        <td>{{usu.Tipo}}</td>
+    </tr>
 
     
 </table>

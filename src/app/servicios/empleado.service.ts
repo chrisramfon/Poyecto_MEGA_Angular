@@ -8,7 +8,13 @@ import {HttpClient} from '@angular/common/http';
 export class EmpleadoService {
 
   private urlEmp="http://localhost:3000/empleado"
+  private urlUsu="http://localhost:3000/usuario"
+
   constructor(private http:HttpClient) { }
+
+  guardarUsu(usuario){
+    return this.http.post<any>(this.urlUsu,usuario)
+  }
 
   guardarEmp(empleado){
     return this.http.post<any>(this.urlEmp,empleado)
@@ -20,7 +26,7 @@ export class EmpleadoService {
     return this.http.post(this.urlEmp+"/borrar",empleado)
   }
   buscarEmp(empleado){
-    return this.http.get<any>(this.urlEmp+"/"+empleado.IDem)
+    return this.http.get<any>(this.urlEmp+"/"+empleado.id)
   }
   consultartodoEmp(){
     return this.http.get<any>(this.urlEmp)

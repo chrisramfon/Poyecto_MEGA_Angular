@@ -15,7 +15,8 @@
          <!-- MENU LINKS -->
          <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-nav-first">
-                   
+               <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="cliente">Clientes</a></li>
+               <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="empleado">Empleados</a></li>
                    <li *ngIf="entro; else esfalsa"><a href="" class="smoothScroll" (click)="cerrarsesion()">Cerrar Sesión</a></li>
                    
                    <ng-template #esfalsa>
@@ -25,8 +26,7 @@
                    <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
                     </ng-template>
 
-                   <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="cliente">Clientes</a></li>
-                   <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerlink="empleado">Empleados</a></li>
+                
               </ul>
 
              
