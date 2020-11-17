@@ -17,8 +17,7 @@ export class InicioComponent implements OnInit {
   constructor(private iniciosesion:IniciosesionService, private router:Router) { }
   //Elementos de owl-carousel
   title = 'owlcarouselinAngular';  
-  SlideOptions = { items: 1, dots: true, nav: true };  
-  CarouselOptions = { items: 3, dots: true, nav: true };  
+  SlideOptions = { items: 1, dots: true }; 
   //Fin de elementos owl-carousel
 
   ngOnInit(): void {
