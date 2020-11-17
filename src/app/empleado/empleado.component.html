@@ -1,50 +1,91 @@
-<p>empleado works!</p>
+    <!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-indexempleados">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1>Empleados</h1>
+                                        <h3>Aqui encontrarás la información de los empleados registrados</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
 
-Código:<input type="text" name="id" [(ngModel)]="empleado.id"> <br>
-Nombre:<input type="text" name="Nombre" [(ngModel)]="empleado.Nombre"> <br>
-Apellido paterno:<input type="text" name="Apellido1" [(ngModel)]="empleado.Apellido1"> <br>
-Apellido materno:<input type="text" name="Apellido2" [(ngModel)]="empleado.Apellido2"> <br>
-Dirección:<input type="text" name="Direccion" [(ngModel)]="empleado.Direccion"> <br>
-Teléfono:<input type="text" name="Telefono" [(ngModel)]="empleado.Telefono"> <br>
-Estado:<input type="text" name="Estado" [(ngModel)]="empleado.Estado"> <br>
-Usuario:<input type="text" name="Usuario" [(ngModel)]="usuario.Usuario"> <br>
-Contraseña:<input type="password" name="Contrasena" [(ngModel)]="usuario.Contrasena"> <br>
 
-<input type="button" value="Buscar" (click)="buscarEmp()">
-<input type="button" value="Guardar" (click)="guardarEmp();guardarUsu()">
-<input type="button" value="Eliminar" (click)="eliminarEmp()">
-<input type="button" value="Modificar" (click)="modificarEmp()">
-<input type="button" value="Cosultar todo" (click)="consultartodoEmp()">
+    <div id="principal">
+        <div id="titulo" class="section-tittle" align="center" style="margin-top: 70px;">
+            <h2>&nbsp</h2>
+        </div>
+        <div id="media">
+            <div id="formu" align="center" style="margin-bottom: 70px">
+                <br>
+                <br>
+                <form id="registroEmpleado" class="entry-form" method="post">
+                    <input type="text" name="id" placeholder="ID" class="form-control" id="id" [(ngModel)] = "empleado.id">
+                    <input type="text" name="Nombre" placeholder="NOMBRE" class="form-control" id="Nombre" [(ngModel)] = "empleado.Nombre">
+                    <input type="text" name="Apellido1" placeholder="PATERNO" class="form-control" id="Apellido1" [(ngModel)] = "empleado.Apellido1">
+                    <input type="text" name="Apellido2" placeholder="MATERNO" class="form-control" id="Apellido2" [(ngModel)] = "empleado.Apellido2">
+                    <input type="text" name="Direccion" placeholder="DIRECCIÓN" class="form-control" id="Direccion" [(ngModel)] = "empleado.Direccion">
+                    <input type="text" name="Telefono" placeholder="TELÉFONO" class="form-control" id="Telefono" [(ngModel)] = "empleado.Telefono">
+                    <div>
+                        <select name="Estado" id="Estado" [(ngModel)] = "empleado.Estado">
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                    <input type="text" name="Usuario" placeholder="USUARIO" class="form-control" id="Usuario" [(ngModel)] = "usuario.Usuario">
+                    <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" id="Contrasena" [(ngModel)] = "usuario.Contrasena">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options1" id="option1" checked (click)="guardarEmp();guardarUsu()" value="Guardar">
+                        <input type="button" name="options2" id="option2" class="btn btn-warning" value="Eliminar" (click) = "buscarEmp()" value="Buscar">
+                        <input type="button" name="options3" id="option3" class="btn btn-warning" value="Modificar" (click) = "modificarEmp()">
+                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options3" id="option3" checked (click)="consultartodoEmp()" value="Mostrar lista">
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
 
-<table>
-    <tr>
-        <td>Código</td>
-        <td>Nombre</td>
-        <td>Apellido Materno</td>
-        <td>Apellido Parterno</td>
-        <td>Dirección</td> 
-        <td>Teléfono</td> 
-        <td>Estado</td> 
-        <td>Usuario</td> 
-        <td>Contraseña</td> 
-        <td>Tipo</td> 
-    
-    </tr>
-
-    <tr *ngFor="let emp of empleados | async">
-        <td>{{emp.id}}</td>
-        <td>{{emp.Nombre}}</td>
-        <td>{{emp.Apellido1}}</td>
-        <td>{{emp.Apellido2}}</td>
-        <td>{{emp.Direccion}}</td>
-        <td>{{emp.Telefono}}</td>
-        <td>{{emp.Estado}}</td>
-    </tr>
-    <tr *ngFor="let usu of usuarios | async">
-        <td>{{usu.Usuario}}</td>
-        <td>{{usu.Contrasena}}</td>
-        <td>{{usu.Tipo}}</td>
-    </tr>
-
-    
-</table>
+<div id="principal" *ngIf="tabla">
+        <div id="tabla-principal" >
+            <div id="tabla-contenedor" >
+                <div id="tabla-tabla" >
+                    <div class="table-responsive" *ngIf="tabla">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td><h4>ID</h4></td>
+                                    <td><h4>Nombre</h4></td>
+                                    <td><h4>Apellido paterno</h4></td>
+                                    <td><h4>Apellido materno</h4></td>
+                                    <td><h4>Dirección</h4></td>
+                                    <td><h4>Telefono</h4></td>
+                                    <td><h4>Estado</h4></td>
+                                </tr> 
+                            </thead>
+                            <tbody *ngFor="let emp of empleados | async">
+                                <tr>
+                                    <td> {{emp.id}} </td>
+                                    <td> {{emp.Nombre}} </td>
+                                    <td> {{emp.Apellido1}} </td>
+                                    <td> {{emp.Apellido2}} </td>
+                                    <td> {{emp.Direccion}} </td>
+                                    <td> {{emp.Telefono}} </td>
+                                    <td> {{emp.Estado}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

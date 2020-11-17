@@ -6,6 +6,7 @@ import {EmpleadoService} from '../servicios/empleado.service';
   styleUrls: ['./empleado.component.css']
 })
 export class EmpleadoComponent implements OnInit {
+  tabla;
   empleados;
   usuarios;
   empleado={
@@ -24,7 +25,10 @@ export class EmpleadoComponent implements OnInit {
     Tipo:"E"
   }
   constructor(private empleadoServicio:EmpleadoService) { }
-
+  //Elementos de owl-carousel
+  title = 'owlcarouselinAngular';
+  SlideOptions = { items: 1, dots: true, nav: true }; 
+  //Fin de elementos owl-carousel
   ngOnInit(): void {
   }
 
@@ -91,7 +95,7 @@ export class EmpleadoComponent implements OnInit {
   }
   consultartodoEmp(){
     this.empleados = this.empleadoServicio.consultartodoEmp()
-    
+    this.tabla = true;
   }
 
 }
