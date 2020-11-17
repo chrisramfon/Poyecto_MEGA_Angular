@@ -9,7 +9,8 @@ import { ClienteService } from '../servicios/cliente.service';
 export class ClienteComponent implements OnInit {
   tabla;
   clientes;
-  cliente = {id: "", Nombre: "", Apellido1: "", Apellido2: "", Direccion: "", Telefono: "", Estado: ""}
+  cliente = {id: "", Nombre: "", Apellido1: "", Apellido2: "", Direccion: "", Telefono: "", Estado: ""};
+  usuario = {id: "", Usuario: "", Contrasena: "", Tipo: "C"};
 
   constructor(private clienteServicio:ClienteService) { }
 
@@ -35,6 +36,9 @@ export class ClienteComponent implements OnInit {
     this.cliente.Direccion = "";
     this.cliente.Telefono = "";
     this.cliente.Estado = "";
+    this.usuario.id = "";
+    this.usuario.Usuario = "";
+    this.usuario.Contrasena = "";
   }
   
 
@@ -46,6 +50,14 @@ export class ClienteComponent implements OnInit {
     }, err=> console.log(err));
   }//Fin de guardar cliente
 
+
+  //Metodo para guardar el usuario
+  guardarUsuario(){
+    this.usuario.id = this.cliente.id;
+    this.clienteServicio.guardarUsuario(this.usuario).subscribe(res=>{
+      alert("Usuario creado con éxito");
+    }, err=>console.log(err));
+  }
 
   //Modificación de cliente
   modificarCliente(){

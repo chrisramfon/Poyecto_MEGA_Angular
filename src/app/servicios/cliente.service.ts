@@ -7,7 +7,13 @@ import {HttpClient} from '@angular/common/http';
 export class ClienteService {
 
   private url="http://localhost:3000/cliente"
+  private url_usuario = "http://localhost:3000/usuario";
   constructor(private http: HttpClient) { }
+
+  //Registro de usuario
+  guardarUsuario(usuario){
+    return this.http.post<any>(this.url_usuario, usuario);
+  }
 
  //Registro de cliente
  guardarCliente(cliente){
