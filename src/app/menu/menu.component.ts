@@ -7,7 +7,7 @@ import {IniciosesionService} from '../servicios/iniciosesion.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+  colapsado = true;
 @HostBinding('class.is-open')
 
 entro=false;
@@ -30,6 +30,14 @@ Tipo="E"
     localStorage.removeItem('Usuario');
     localStorage.removeItem('Tipo');
     this.entro = this.iniciosesion.eslogueado();
+  }
+
+  colapsar(){
+    if(this.colapsado==true){
+      this.colapsado = false;
+    }else{
+      this.colapsado = true;
+    }
   }
 
 }
