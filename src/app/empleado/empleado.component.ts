@@ -36,6 +36,8 @@ export class EmpleadoComponent implements OnInit {
     this.empleado.Direccion=""
     this.empleado.Telefono=""
     this.empleado.Estado=""
+  }
+  limpiarUsu(){
     this.usuario.Usuario="",
     this.usuario.Contrasena=""
   }
@@ -44,16 +46,14 @@ export class EmpleadoComponent implements OnInit {
     this.usuario.id=this.empleado.id
     this.empleadoServicio.guardarUsu(this.usuario).subscribe(res =>{
       //realizaremos un mensaje que nos indique que guardamos el usuario
-      alert("Usuario registrado")
-      /*this.limpiarEmp()
-      this.consultartodoEmp()*/
+      this.limpiarUsu()
+      this.consultartodoUsu()
     },
     //esto es para si hay un error solo lo muestre en consola
     err => console.log(err)
     )
 
   }
-
   guardarEmp(){
     this.empleadoServicio.guardarEmp(this.empleado).subscribe(res =>{
       //realizaremos un mensaje que nos indique que guardamos el usuario
@@ -64,7 +64,15 @@ export class EmpleadoComponent implements OnInit {
     //esto es para si hay un error solo lo muestre en consola
     err => console.log(err)
     )
+  }
 
+  modificarUsu(){
+    this.empleadoServicio.modificarUsu(this.usuario).subscribe(res =>{
+      this.limpiarUsu()
+      this.consultartodoUsu()
+    },
+    err => console.log(err)
+    )
   }
   modificarEmp(){
     this.empleadoServicio.modificarEmp(this.empleado).subscribe(res =>{
@@ -75,6 +83,14 @@ export class EmpleadoComponent implements OnInit {
     err => console.log(err)
     )
   }
+
+  eliminarUsu(){
+    this.empleadoServicio.eliminarUsu(this.usuario).subscribe(res=>{
+      alert("Registro eliminado")
+      this.limpiarUsu()
+      this.consultartodoUsu()
+    }, err=> console.log(err))
+  }
   eliminarEmp(){
     this.empleadoServicio.eliminarEmp(this.empleado).subscribe(res=>{
       alert("Registro eliminado")
@@ -82,16 +98,27 @@ export class EmpleadoComponent implements OnInit {
       this.consultartodoEmp()
     }, err=> console.log(err))
   }
-  buscarEmp(){
-    this.empleadoServicio.buscarEmp(this.empleado).subscribe(res =>{
-     // this.empleado = res
+
+  buscarUsu(){
+    this.empleadoServicio.buscarUsu(this.usuario).subscribe(res =>{
+     this.usuario = res
     },
     err => console.log(err)
     )
   }
+  buscarEmp(){
+    this.empleadoServicio.buscarEmp(this.empleado).subscribe(res =>{
+     this.empleado = res
+    },
+    err => console.log(err)
+    )
+  }
+
+  consultartodoUsu(){
+    this.usuarios = this.empleadoServicio.consultartodoUsu()
+  }
   consultartodoEmp(){
     this.empleados = this.empleadoServicio.consultartodoEmp()
-    
   }
 
 }

@@ -10,11 +10,12 @@ Estado:<input type="text" name="Estado" [(ngModel)]="empleado.Estado"> <br>
 Usuario:<input type="text" name="Usuario" [(ngModel)]="usuario.Usuario"> <br>
 Contraseña:<input type="password" name="Contrasena" [(ngModel)]="usuario.Contrasena"> <br>
 
-<input type="button" value="Buscar" (click)="buscarEmp()">
+
 <input type="button" value="Guardar" (click)="guardarEmp();guardarUsu()">
-<input type="button" value="Eliminar" (click)="eliminarEmp()">
-<input type="button" value="Modificar" (click)="modificarEmp()">
-<input type="button" value="Cosultar todo" (click)="consultartodoEmp()">
+<input type="button" value="Buscar" (click)="buscarEmp();buscarUsu()">
+<input type="button" value="Eliminar" (click)="eliminarEmp();eliminarUsu()">
+<input type="button" value="Modificar" (click)="modificarEmp();modificarUsu()">
+<input type="button" value="Cosultar todo" (click)="consultartodoEmp();consultartodoUsu()">
 
 <table>
     <tr>
@@ -25,10 +26,6 @@ Contraseña:<input type="password" name="Contrasena" [(ngModel)]="usuario.Contra
         <td>Dirección</td> 
         <td>Teléfono</td> 
         <td>Estado</td> 
-        <td>Usuario</td> 
-        <td>Contraseña</td> 
-        <td>Tipo</td> 
-    
     </tr>
 
     <tr *ngFor="let emp of empleados | async">
@@ -40,11 +37,17 @@ Contraseña:<input type="password" name="Contrasena" [(ngModel)]="usuario.Contra
         <td>{{emp.Telefono}}</td>
         <td>{{emp.Estado}}</td>
     </tr>
+</table>
+<table>
+    <tr>
+        <td>Usuario</td> 
+        <td>Contraseña</td> 
+        <td>Tipo</td> 
+    </tr>
+    
     <tr *ngFor="let usu of usuarios | async">
         <td>{{usu.Usuario}}</td>
         <td>{{usu.Contrasena}}</td>
         <td>{{usu.Tipo}}</td>
     </tr>
-
-    
 </table>
