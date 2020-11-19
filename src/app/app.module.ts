@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +36,8 @@ import {EmpleadoService} from './servicios/empleado.service'
     AppRoutingModule,
     OwlModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [//Servicios 
     IniciosesionService,

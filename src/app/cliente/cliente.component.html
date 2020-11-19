@@ -1,9 +1,8 @@
-
-     <!-- Imagen -->
+    <!-- Imagen -->
      <section id="home">
         <section id="home">
             <div class="row">
-                <owl-carousel [options]="SlideOptions" [items]="Images" [carouselClasses]="['owl-theme', 'sliding']" > 
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
                     <div class="owl-theme home-slider">
                         <div class="item item-indexclientes">
                             <div class="caption">
@@ -22,7 +21,7 @@
     </section>
 
 
-     <!-- MENU -->
+     <!-- Formulario -->
      
 
 
@@ -48,10 +47,10 @@
                             <option value="Inactivo">Inactivo</option>
                         </select>
                     </div>
-                    <input type="text" name="usuario" placeholder="USUARIO" class="form-control" id="usuario">
-                    <input type="password" name="contrasenia" placeholder="CONTRASEÑA" class="form-control" id="contrasenia">
+                    <input type="text" name="Usuario" placeholder="USUARIO" class="form-control" id="Usuario" [(ngModel)] = "usuario.Usuario">
+                    <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" id="Contrasena" [(ngModel)] = "usuario.Contrasena">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options1" id="option1" checked (click)="guardarCliente()" value="Guardar">
+                        <input class="btn btn-primary btn-negro texto-gris" type="button" name="options1" id="option1" checked (click)="guardarCliente();guardarUsuario()" value="Guardar">
                         <input type="button" name="options2" id="option2" class="btn btn-warning" value="Eliminar" (click) = "consultarCliente()" value="Buscar">
                         <input type="button" name="options3" id="option3" class="btn btn-warning" value="Modificar" (click) = "modificarCliente()">
                         <input class="btn btn-primary btn-negro texto-gris" type="button" name="options3" id="option3" checked (click)="buscarTodosClientes()" value="Mostrar lista">
