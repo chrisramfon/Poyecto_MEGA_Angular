@@ -11,12 +11,12 @@
     </div>
     <div class="collapse navbar-collapse" [ngbCollapse]="colapsado">
       <ul class="nav navbar-nav navbar-nav-first">
-        <li><a href="" class="smoothScroll" routerLink="cliente">Clientes</a></li>
-        <li><a href="" class="smoothScroll" routerLink="empleado">Empleados</a></li>
+        <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="cliente">Clientes</a></li>
+        <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="empleado">Empleados</a></li>
         <li *ngIf="entro; else esfalsa"><a href="" class="smoothScroll" (click)="cerrarsesion()">Cerrar Sesión</a></li> 
         <ng-template #esfalsa>
           <li><a href="#top" class="smoothScroll">Inicio</a></li>
-          <li><a href="" class="smoothScroll">Nosotros</a></li>
+          <li><a href="#about" class="smoothScroll">Nosotros</a></li>
           <li><a href="#team" class="smoothScroll">Productos</a></li>
           <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
         </ng-template>

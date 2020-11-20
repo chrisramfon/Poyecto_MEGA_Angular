@@ -38,12 +38,12 @@
                     <input type="text" name="Apellido2" placeholder="MATERNO" class="form-control" [(ngModel)] = "empleado.Apellido2">
                     <input type="text" name="Direccion" placeholder="DIRECCIÓN" class="form-control" [(ngModel)] = "empleado.Direccion">
                     <input type="text" name="Telefono" placeholder="TELÉFONO" class="form-control" [(ngModel)] = "empleado.Telefono">
-                    <div>
-                        <select name="Estado" id="Estado" [(ngModel)] = "empleado.Estado">
-                            <option value="Activo">Activo</option>
-                            <option value="Inactivo">Inactivo</option>
-                        </select>
-                    </div>
+                        <div>
+                            <select name="Estado" id="Estado" [(ngModel)] = "empleado.Estado">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
+                        </div>
                     <input type="text" name="Usuario" placeholder="USUARIO" class="form-control" [(ngModel)] = "usuario.Usuario">
                     <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" [(ngModel)] = "usuario.Contrasena">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -62,7 +62,7 @@
             <div id="tabla-contenedor" >
                 <div id="tabla-tabla" >
                     <div class="table-responsive" *ngIf="tabla">
-                        <table class="table" style="float: left;">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <td><h4>ID</h4></td>
@@ -84,20 +84,6 @@
                                     <td> {{emp.Direccion}} </td>
                                     <td> {{emp.Telefono}} </td>
                                     <td> {{emp.Estado}} </td>
-                                </tr>
-                            </tbody>>
-                        </table>
-                        <table class="table" style="float: right;">
-                            <thead>
-                                <tr>
-                                    <td><h4>Usuario</h4></td> 
-                                    <td><h4>Tipo</h4></td> 
-                                </tr>
-                            </thead>
-                            <tbody *ngFor="let usu of usuarios | async">
-                                <tr>
-                                    <td>{{usu.Usuario}}</td>
-                                    <td>{{usu.Tipo}}</td>
                                 </tr>
                             </tbody>
                         </table>
