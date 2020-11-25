@@ -10,6 +10,7 @@ export class IniciosesionService {
 
 @Output() change: EventEmitter<boolean> = new EventEmitter();
 @Output() change1: EventEmitter<String> = new EventEmitter();
+@Output() change3: EventEmitter<String> = new EventEmitter();
 
   constructor(private http:HttpClient) { }
 
@@ -26,5 +27,10 @@ export class IniciosesionService {
   tipousu(){
     this.change1.emit(localStorage.getItem('Tipo'))
     return localStorage.getItem('Tipo')
+  }
+
+  idusuario(){
+    this.change3.emit(localStorage.getItem('id'));
+    return localStorage.getItem('id');
   }
 }

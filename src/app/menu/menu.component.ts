@@ -29,6 +29,7 @@ Tipo="E"
     localStorage.removeItem('token');
     localStorage.removeItem('Usuario');
     localStorage.removeItem('Tipo');
+    localStorage.removeItem('id');
     this.entro = this.iniciosesion.eslogueado();
   }
 
