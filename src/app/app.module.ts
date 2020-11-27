@@ -17,7 +17,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import {IniciosesionService} from './servicios/iniciosesion.service';
 import {ClienteService} from './servicios/cliente.service';
 import {EmpleadoService} from './servicios/empleado.service';
-import { MiscitasComponent } from './miscitas/miscitas.component'
+
 
 
 
@@ -29,8 +29,7 @@ import { MiscitasComponent } from './miscitas/miscitas.component'
     InicioComponent,
     LoginComponent,
     EmpleadoComponent,
-    ClienteComponent,
-    MiscitasComponent
+    ClienteComponent
     
   ],
   imports: [

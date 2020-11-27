@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IniciosesionService {
 
-  private url_login="http://localhost:3000/usuario/inicio"
+  private url_login="http://localhost:3000/usuario/iniciosesion"
 
 @Output() change: EventEmitter<boolean> = new EventEmitter();
 @Output() change1: EventEmitter<String> = new EventEmitter();
