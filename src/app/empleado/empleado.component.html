@@ -8,8 +8,8 @@
                             <div class="caption">
                                 <div class="container">
                                     <div class="col-md-6 col-sm-12">
-                                        <h1>Empleados</h1>
-                                        <h3>Aqui encontrarás la información de los empleados registrados</h3>
+                                        <h1 class="textocarrusel">Operaciones de empleados</h1>
+                                        <h3 class="textocarrusel">Ingresa los datos en el formulario para registrar a un nuevo empleado. Puedes ingresar el código de un empleado existente para obtener su información. Si modificas algún dato presiona "modificar" para guardar los cambios.</h3>
                                     </div>         
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
 
     <div id="principal">
         <div id="titulo" class="section-tittle" align="center" style="margin-top: 70px;">
-            <h2>&nbsp</h2>
+            <h2>Formulario</h2>
         </div>
         <div id="media">
             <div id="formu" align="center" style="margin-bottom: 70px">
@@ -47,48 +47,11 @@
                     <input type="text" name="Usuario" placeholder="USUARIO" class="form-control" [(ngModel)] = "usuario.Usuario">
                     <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" [(ngModel)] = "usuario.Contrasena">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <input class="btn btn-warning btn-negro texto-gris" type="button" name="options1" id="option1" checked (click)="guardarEmp();guardarUsu()" value="Guardar">
-                        <input type="button" name="options2" id="option2" class="btn btn-warning" value="Eliminar" (click) = "buscarEmp();buscarUsu()" value="Buscar">
-                        <input type="button" name="options3" id="option3" class="btn btn-warning" value="Modificar" (click) = "modificarEmp();modificarUsu()">
-                        <input class="btn btn-warning btn-negro texto-gris" type="button" name="options3" id="option3" checked (click)="consultartodoEmp();consultartodoUsu()" value="Mostrar lista">
+                        <input class="btn btn-warning botonguardar" type="button" name="guardar" id="guardar" checked (click)="guardarEmp();guardarUsu()" value="Guardar">
+                        <input type="button" name="buscar" id="buscar" class="btn btn-warning botonbuscar" value="Buscar" (click) = "buscarEmp();" value="Buscar">
+                        <input type="button" name="options3" id="option3" class="btn btn-warning botonmodificar" value="Modificar" (click) = "modificarEmp()">
                     </div>   
                 </form>
-            </div>
-        </div>
-    </div>
-
-<div id="principal" *ngIf="tabla">
-        <div id="tabla-principal" >
-            <div id="tabla-contenedor" >
-                <div id="tabla-tabla" >
-                    <div class="table-responsive" *ngIf="tabla">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <td><h4>ID</h4></td>
-                                    <td><h4>Nombre</h4></td>
-                                    <td><h4>Apellido paterno</h4></td>
-                                    <td><h4>Apellido materno</h4></td>
-                                    <td><h4>Dirección</h4></td>
-                                    <td><h4>Telefono</h4></td>
-                                    <td><h4>Estado</h4></td>
-                                </tr> 
-                               
-                            </thead>
-                            <tbody *ngFor="let emp of empleados | async">
-                                <tr>
-                                    <td> {{emp.id}} </td>
-                                    <td> {{emp.Nombre}} </td>
-                                    <td> {{emp.Apellido1}} </td>
-                                    <td> {{emp.Apellido2}} </td>
-                                    <td> {{emp.Direccion}} </td>
-                                    <td> {{emp.Telefono}} </td>
-                                    <td> {{emp.Estado}} </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

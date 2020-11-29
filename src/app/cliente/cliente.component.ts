@@ -42,6 +42,7 @@ export class ClienteComponent implements OnInit {
 
   //Metodo para guardar un cliente
   guardarCliente(){
+    this.cliente.Estado = "Activo";
     this.clienteServicio.guardarCliente(this.cliente).subscribe(res=>{
       alert("Cliente registrado");
       this.limpiarFormulario();

@@ -1,0 +1,59 @@
+<!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-indexempleados">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1 class="textocarrusel">Empleados</h1>
+                                        <h3 class="textocarrusel">Aquí podrás ver la lista de empleados. Para registrar, modificar y/o buscar un empleado, presiona el botón "operaciones".</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
+
+
+    <div id="principal">
+        <div id="tabla-principal" >
+            <div id="tabla-contenedor" >
+                <div id="tabla-tabla" >
+                	<input type="button" name="nueva" class="" (click) = "operaciones()" class="btn btn-primary botonbuscar" value="Operaciones">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td><h4>ID</h4></td>
+                                    <td><h4>Nombre</h4></td>
+                                    <td><h4>Apellido paterno</h4></td>
+                                    <td><h4>Apellido materno</h4></td>
+                                    <td><h4>Dirección</h4></td>
+                                    <td><h4>Telefono</h4></td>
+                                    <td><h4>Estado</h4></td>
+                                </tr> 
+                            </thead>
+                            <tbody *ngFor = "let emp of empleados | async | paginate:{itemsPerPage: 20, currentPage: p}">
+                                <tr>
+                                    <td> {{emp.id}} </td>
+                                    <td> {{emp.Nombre}} </td>
+                                    <td> {{emp.Apellido1}} </td>
+                                    <td> {{emp.Apellido2}} </td>
+                                    <td> {{emp.Direccion}} </td>
+                                    <td> {{emp.Telefono}} </td>
+                                    <td> {{emp.Estado}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,3 +1,4 @@
+//Librerias
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -5,6 +6,8 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,10 +16,16 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { InicioclientesComponent } from './inicioclientes/inicioclientes.component';
+import { EmpleadoinicioComponent } from './empleadoinicio/empleadoinicio.component';
+
 //Servicios
 import {IniciosesionService} from './servicios/iniciosesion.service';
 import {ClienteService} from './servicios/cliente.service';
 import {EmpleadoService} from './servicios/empleado.service';
+import {InicioclienteService} from './servicios/iniciocliente.service';
+import {EmpleadoinicioService} from './servicios/empleadoinicio.service';
+
 
 
 
@@ -29,7 +38,9 @@ import {EmpleadoService} from './servicios/empleado.service';
     InicioComponent,
     LoginComponent,
     EmpleadoComponent,
-    ClienteComponent
+    ClienteComponent,
+    InicioclientesComponent,
+    EmpleadoinicioComponent
     
   ],
   imports: [
@@ -38,12 +49,15 @@ import {EmpleadoService} from './servicios/empleado.service';
     OwlModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],
   providers: [//Servicios 
     IniciosesionService,
     ClienteService,
-    EmpleadoService
+    EmpleadoService,
+    InicioclienteService,
+    EmpleadoinicioService
   ],
   bootstrap: [AppComponent]
 })

@@ -130,6 +130,34 @@ https://templatemo.com/tm-516-known
      GENERAL               
   -----------------------------------------*/
 
+  .botonguardar{
+    background-color: #252020 !important; 
+    border-color: green !important;
+  }
+
+  .botonguardar:hover{
+    background-color: green !important;
+  }
+
+  .botonbuscar{
+    background-color: #252020 !important; 
+    border-color: blue !important;
+  }
+
+  .botonbuscar:hover{
+    background-color: blue !important;
+  }
+
+  .botonmodificar{
+    background-color: #252020 !important; 
+    border-color: yellow !important;
+  }
+
+  .botonmodificar:hover{
+    background-color:yellow !important;
+  }
+
+
   html{
     -webkit-font-smoothing: antialiased;
   }
@@ -443,6 +471,12 @@ https://templatemo.com/tm-516-known
   /*---------------------------------------
       HOME  & SLIDER            
   -----------------------------------------*/
+  .textocarrusel{
+    background-color: black; 
+    opacity: .7; 
+    margin: 0; 
+  }
+
 
   #home {
     padding: 0;

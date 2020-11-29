@@ -1,0 +1,59 @@
+<!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-indexclientes">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1 class="textocarrusel">Clientes</h1>
+                                        <h3 class="textocarrusel">Aquí podrás ver la lista de clientes. Para registrar, modificar y/o buscar un cliente, presiona el botón "operaciones".</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
+
+
+    <div id="principal">
+        <div id="tabla-principal" >
+            <div id="tabla-contenedor" >
+                <div id="tabla-tabla" >
+                	<input type="button" name="nueva" class="" (click) = "operaciones()" class="btn btn-primary botonbuscar" value="Operaciones">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td><h4>ID</h4></td>
+                                    <td><h4>Nombre</h4></td>
+                                    <td><h4>Apellido paterno</h4></td>
+                                    <td><h4>Apellido materno</h4></td>
+                                    <td><h4>Dirección</h4></td>
+                                    <td><h4>Telefono</h4></td>
+                                    <td><h4>Estado</h4></td>
+                                </tr> 
+                            </thead>
+                            <tbody *ngFor = "let cl of clientes | async | paginate:{itemsPerPage: 20, currentPage: p}">
+                                <tr>
+                                    <td> {{cl.id}} </td>
+                                    <td> {{cl.Nombre}} </td>
+                                    <td> {{cl.Apellido1}} </td>
+                                    <td> {{cl.Apellido2}} </td>
+                                    <td> {{cl.Direccion}} </td>
+                                    <td> {{cl.Telefono}} </td>
+                                    <td> {{cl.Estado}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
