@@ -18,6 +18,8 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { InicioclientesComponent } from './inicioclientes/inicioclientes.component';
 import { EmpleadoinicioComponent } from './empleadoinicio/empleadoinicio.component';
+import { IniciocitasComponent } from './iniciocitas/iniciocitas.component';
+import { CitaComponent } from './cita/cita.component';
 
 //Servicios
 import {IniciosesionService} from './servicios/iniciosesion.service';
@@ -25,10 +27,8 @@ import {ClienteService} from './servicios/cliente.service';
 import {EmpleadoService} from './servicios/empleado.service';
 import {InicioclienteService} from './servicios/iniciocliente.service';
 import {EmpleadoinicioService} from './servicios/empleadoinicio.service';
-
-
-
-
+import {IniciocitasService} from './servicios/iniciocitas.service';
+import {CitaService} from './servicios/cita.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,9 @@ import {EmpleadoinicioService} from './servicios/empleadoinicio.service';
     EmpleadoComponent,
     ClienteComponent,
     InicioclientesComponent,
-    EmpleadoinicioComponent
+    EmpleadoinicioComponent,
+    IniciocitasComponent,
+    CitaComponent
     
   ],
   imports: [
@@ -57,7 +59,9 @@ import {EmpleadoinicioService} from './servicios/empleadoinicio.service';
     ClienteService,
     EmpleadoService,
     InicioclienteService,
-    EmpleadoinicioService
+    EmpleadoinicioService,
+    IniciocitasService,
+    CitaService
   ],
   bootstrap: [AppComponent]
 })

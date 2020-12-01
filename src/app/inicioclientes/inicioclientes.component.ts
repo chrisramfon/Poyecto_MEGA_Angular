@@ -23,7 +23,7 @@ export class InicioclientesComponent implements OnInit {
     SlideOptions = { items: 1, dots: true, nav: true }; 
     //Fin de elementos owl-carousel
 
-      //Buscar todos los clientes
+  //Buscar todos los clientes
   buscarTodosClientes(){
     this.clientes = this.inicioServicio.consultarTodosClientes();
   }//Fin de buscar todos los clientes

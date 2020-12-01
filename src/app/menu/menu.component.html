@@ -3,16 +3,17 @@
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" (click) = "colapsar()">
-      <span class="icon icon-bar"></span>
-      <span class="icon icon-bar"></span>
-      <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
       </button>
       <a href="" class="navbar-brand">MEGA</a>
-    </div>
+    </div> <!-- div nav-header -->
     <div class="collapse navbar-collapse" [ngbCollapse]="colapsado">
       <ul class="nav navbar-nav navbar-nav-first">
         <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="inicioclientes">Clientes</a></li>
         <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="inicioempleados">Empleados</a></li>
+        <li *ngIf="entro && Tipo=='E'"><a href="" class="smoothScroll" routerLink="iniciocitas">Citas</a></li>
         <li *ngIf="entro; else esfalsa"><a href="" class="smoothScroll" (click)="cerrarsesion()">Cerrar Sesión</a></li> 
         <ng-template #esfalsa>
           <li><a href="#top" class="smoothScroll">Inicio</a></li>
@@ -21,8 +22,8 @@
           <li><a href="#testimonial" class="smoothScroll">Reviews</a></li>
         </ng-template>
       </ul>
-    </div>
-  </div>
+    </div><!-- collapse -->
+  </div><!-- container -->
 </section>
 
 

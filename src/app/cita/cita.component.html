@@ -1,0 +1,52 @@
+ <!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-estadocitas">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1 class="textocarrusel">Modificación de citas </h1>
+                                        <h3 class="textocarrusel">Ingresa el id del cliente y el id de la cita que quieras modificar. No olvides que todos los campos deben estar llenos. Es importante que conozcas los datos de antemano. Los datos que no se modifican se ingresan igual, solo se ingresa un valor diferente en el campo que quieras modificar.</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
+
+     <!-- Formulario -->
+    <div id="principal">
+        <div id="titulo" class="section-tittle" align="center" style="margin-top: 70px;">
+            <h2>Formulario</h2>
+        </div>
+        <div id="media">
+            <div id="formu" align="center" style="margin-bottom: 70px">
+                <br>
+                <br>
+                <form id="modificacionCita" class="entry-form" method="post">
+                    <input type="text" name="id_cl" placeholder="ID del cliente" class="form-control" id="cita.id_cliente" [(ngModel)] = "cita.id_cliente">
+                    <input type="text" name="id_cita" placeholder="ID de la cita" class="form-control" id="cita" [(ngModel)] = "cita.id_cita">
+                    <div class="custom-select">
+                        <select name="Estado" id="Estado" [(ngModel)] = "cita.Estado">
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="custom-select">
+                        <select name="Emple" id="Emple" [(ngModel)] = "cita.Empleado">
+                            <option *ngFor = "let emp of empleados | async" value="{{emp.id}}">{{emp.id}}</option>
+                        </select>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <input type="button" name="options3" id="option3" class="btn btn-warning botonmodificar" value="Modificar" (click) = " modificarCita()">
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,65 @@
+<!-- Imagen -->
+     <section id="home">
+        <section id="home">
+            <div class="row">
+                <owl-carousel [options]="SlideOptions" [carouselClasses]="['owl-theme', 'sliding']" > 
+                    <div class="owl-theme home-slider">
+                        <div class="item item-indexcitas">
+                            <div class="caption">
+                                <div class="container">
+                                    <div class="col-md-6 col-sm-12">
+                                        <h1 class="textocarrusel">Citas</h1>
+                                        <h3 class="textocarrusel">Aquí podrás ver la lista de citas. Para modificar y/o buscar una cita, presiona el botón "operaciones".</h3>
+                                    </div>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </owl-carousel>
+            </div>
+        </section>
+    </section>
+
+
+    <div id="principal" style="height: auto">
+        <div id="tabla-principal" style="height: auto">
+            <div id="tabla-contenedor" style="height: auto">
+                <div id="tabla-tabla" style="height: auto">
+                	<input type="button" name="nueva" class="" class="btn btn-primary botonbuscar" value="Operaciones" (click) = "cita()">
+                	<br>
+                	<br>
+                	<pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    <div class="table-responsive" *ngFor = "let cl of clientes | async | paginate:{itemsPerPage: 3, currentPage: p}">
+                    	<br>
+                    	<br>
+                    	<div><h3>Cliente #{{cl.id}} {{cl.Nombre}}</h3></div>
+                    	<br>
+                    	<br>
+                        <table class="table" >
+                            <thead>
+                                <tr>
+                                    <td><h4>ID</h4></td>
+                                    <td><h4>Fecha y Hora</h4></td>
+                                    <td><h4>Motivo</h4></td>
+                                    <td><h4>Estado</h4></td>
+                                    <td><h4>Empleado</h4></td>
+                                    <td><h4>Vehiculo</h4></td>
+                                </tr> 
+                            </thead>
+                            <tbody *ngFor = "let ct of cl.Cita">
+                                <tr>
+                                    <td> {{ct.id_cita}} </td>
+                                    <td> {{ct.Fecha_Hora}} </td>
+                                    <td> {{ct.Motivo}} </td>
+                                    <td> {{ct.Estado}} </td>
+                                    <td> {{ct.id_Empleado}} </td>
+                                    <td> {{ct.Matricula_Vehiculo}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>

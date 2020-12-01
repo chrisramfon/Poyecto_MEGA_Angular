@@ -53,38 +53,3 @@
             </div>
         </div>
     </div>
-
-    <div id="principal" *ngIf="tabla">
-        <div id="tabla-principal" >
-            <div id="tabla-contenedor" >
-                <div id="tabla-tabla" >
-                    <div class="table-responsive" *ngIf="tabla">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <td><h4>ID</h4></td>
-                                    <td><h4>Nombre</h4></td>
-                                    <td><h4>Apellido paterno</h4></td>
-                                    <td><h4>Apellido materno</h4></td>
-                                    <td><h4>Dirección</h4></td>
-                                    <td><h4>Telefono</h4></td>
-                                    <td><h4>Estado</h4></td>
-                                </tr> 
-                            </thead>
-                            <tbody *ngFor = "let cl of clientes | async">
-                                <tr>
-                                    <td> {{cl.id}} </td>
-                                    <td> {{cl.Nombre}} </td>
-                                    <td> {{cl.Apellido1}} </td>
-                                    <td> {{cl.Apellido2}} </td>
-                                    <td> {{cl.Direccion}} </td>
-                                    <td> {{cl.Telefono}} </td>
-                                    <td> {{cl.Estado}} </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
