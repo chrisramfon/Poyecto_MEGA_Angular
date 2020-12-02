@@ -38,6 +38,9 @@ export class ClienteComponent implements OnInit {
     this.usuario.Usuario = "";
     this.usuario.Contrasena = "";
   }
+  limpiarUsu(){
+    this.usuario.Contrasena=""
+  }
   
 
   //Metodo para guardar un cliente
@@ -82,7 +85,15 @@ export class ClienteComponent implements OnInit {
     }, err=>console.log(err));
   }//Fin de eliminar cliente
 
-
+  consultarUsu(){
+    this.usuario.id = this.cliente.id
+    this.clienteServicio.consultarUsu(this.usuario).subscribe(res =>{
+     this.usuario = res
+     this.limpiarUsu()
+    },
+    err => console.log(err)
+    )
+  }
   //Buscar un solo cliente
   consultarCliente(){
   this.clienteServicio.consultarCliente(this.cliente).subscribe(res=>{

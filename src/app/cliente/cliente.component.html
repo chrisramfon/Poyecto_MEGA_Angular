@@ -46,7 +46,7 @@
                     <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" id="Contrasena" [(ngModel)] = "usuario.Contrasena">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <input class="btn btn-primary botonguardar" type="button" name="options1" id="option1" checked (click)="guardarCliente();guardarUsuario()" value="Guardar">
-                        <input type="button" name="options2" id="option2" class="btn btn-warning botonbuscar" value="Eliminar" (click) = "consultarCliente()" value="Buscar">
+                        <input type="button" name="options2" id="option2" class="btn btn-warning botonbuscar" value="Eliminar" (click) = "consultarCliente();consultarUsu()" value="Buscar">
                         <input type="button" name="options3" id="option3" class="btn btn-warning botonmodificar" value="Modificar" (click) = "modificarCliente()">
                     </div>   
                 </form>

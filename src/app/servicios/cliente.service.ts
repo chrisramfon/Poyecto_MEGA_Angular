@@ -26,7 +26,9 @@ export class ClienteService {
    return this.http.put<any>(this.url, cliente);
  }
 
-
+ consultarUsu(usuario){
+  return this.http.get<any>(this.url_usuario+"/"+usuario.id)
+}
  //Consultar un solo cliente
  consultarCliente(cliente){
   return this.http.get<any>(this.url+"/"+cliente.id);
