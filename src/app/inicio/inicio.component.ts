@@ -36,7 +36,7 @@ export class InicioComponent implements OnInit {
 
         this.iniciosesion.eslogueado();
         this.iniciosesion.tipousu();
-        this.router.navigate(['inicioclientes'])
+        this.router.navigate(['inicio'])
       },
       err =>{
         console.log(err)

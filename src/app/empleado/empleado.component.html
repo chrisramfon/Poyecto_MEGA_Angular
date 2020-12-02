@@ -40,7 +40,7 @@
                     <input type="text" name="Telefono" placeholder="TELÉFONO" class="form-control" [(ngModel)] = "empleado.Telefono">
                         <div>
                             <select name="Estado" id="Estado" [(ngModel)] = "empleado.Estado">
-                                <option value="Activo">Activo</option>
+                             <option value="Activo">Activo</option>
                                 <option value="Inactivo">Inactivo</option>
                             </select>
                         </div>
@@ -48,7 +48,7 @@
                     <input type="password" name="Contrasena" placeholder="CONTRASEÑA" class="form-control" [(ngModel)] = "usuario.Contrasena">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <input class="btn btn-warning botonguardar" type="button" name="guardar" id="guardar" checked (click)="guardarEmp();guardarUsu()" value="Guardar">
-                        <input type="button" name="buscar" id="buscar" class="btn btn-warning botonbuscar" value="Buscar" (click) = "buscarEmp();" value="Buscar">
+                        <input type="button" name="buscar" id="buscar" class="btn btn-warning botonbuscar" value="Buscar" (click) = "buscarEmp();buscarUsu()" value="Buscar">
                         <input type="button" name="options3" id="option3" class="btn btn-warning botonmodificar" value="Modificar" (click) = "modificarEmp()">
                     </div>   
                 </form>

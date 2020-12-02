@@ -45,6 +45,9 @@ export class EmpleadoComponent implements OnInit {
     this.usuario.Usuario="",
     this.usuario.Contrasena=""
   }
+  limpiarUsuCon(){
+    this.usuario.Contrasena=""
+  }
 
   guardarUsu(){
     this.usuario.id=this.empleado.id
@@ -109,7 +112,7 @@ export class EmpleadoComponent implements OnInit {
     this.usuario.id = this.empleado.id
     this.empleadoServicio.buscarUsu(this.usuario).subscribe(res =>{
      this.usuario = res
-     
+     this.limpiarUsuCon()
     },
     err => console.log(err)
     )
