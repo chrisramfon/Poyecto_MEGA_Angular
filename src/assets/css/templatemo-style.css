@@ -129,29 +129,29 @@ https://templatemo.com/tm-516-known
 
   .botonguardar{
     background-color: #252020 !important; 
-    border-color: green !important;
+    border-color: #EA4D1A !important;
   }
 
   .botonguardar:hover{
-    background-color: green !important;
+    background-color: #EA4D1A !important;
   }
 
   .botonbuscar{
     background-color: #252020 !important; 
-    border-color: blue !important;
+    border-color: #EA4D1A !important;
   }
 
   .botonbuscar:hover{
-    background-color: blue !important;
+    background-color: #EA4D1A !important;
   }
 
   .botonmodificar{
     background-color: #252020 !important; 
-    border-color: yellow !important;
+    border-color: #EA4D1A !important;
   }
 
   .botonmodificar:hover{
-    background-color:yellow !important;
+    background-color: #EA4D1A !important;
   }
 
 
